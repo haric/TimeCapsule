@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1187">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="lib/jquery.js" &gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    <span class="Apple-tab-span">	</span></span>&lt;video id="ourvideo" controls width="80%" height="100" class="video-js vjs-default-skin" preload="auto" &gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;source src="http://mobileratchet.co/media/hls/RandomStuff.m3u8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">       <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span> </span>&lt;source src="http://mobileratchet.co/media/Chime.mp4" type="video/mp4" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/video&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="footnotediv"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="attribdiv"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="twitterdiv"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// ensure the web page (DOM) has loaded</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$( function () {</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">         </span>// Create a popcorn instance by calling Popcorn("#id-of-my-video")</p>
+<p class="p1"><span class="Apple-converted-space">         </span>var pop = Popcorn ("#ourvideo");</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">       </span>pop.attribution({</p>
+<p class="p1"><span class="Apple-converted-space">       </span>start: 0,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>end: 10,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nameofwork: "A Shared Culture",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>copyrightholder:"Jesse Dylan",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>license: "CC-BY-N6",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>licenseurl: "http://creativecommons.org/licenses/by-nc/2.0/",</p>
+<p class="p1"><span class="Apple-converted-space">       </span>target: "attribdiv"</p>
+<p class="p1"><span class="Apple-converted-space">     </span>});</p>
+<p class="p2"><span class="Apple-tab-span">	</span><span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-tab-span">	</span> pop.twitter({</p>
+<p class="p1"><span class="Apple-converted-space">       </span>start: 0,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>end: 10,</p>
+<p class="p1"><span class="Apple-converted-space">       </span>title: "M Dot Prime",</p>
+<p class="p1"><span class="Apple-converted-space">       </span>src: "@mdotprime",</p>
+<p class="p1"><span class="Apple-converted-space">       </span>target: "twitterdiv",</p>
+<p class="p1"><span class="Apple-converted-space">     </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">         </span>// add a footnote at 2 seconds, and remove it at 6 seconds</p>
+<p class="p1"><span class="Apple-converted-space">         </span>pop.footnote({</p>
+<p class="p1"><span class="Apple-converted-space">           </span>start: 2,</p>
+<p class="p1"><span class="Apple-converted-space">           </span>end: 6,</p>
+<p class="p1"><span class="Apple-converted-space">           </span>text: "Pop!",</p>
+<p class="p1"><span class="Apple-converted-space">           </span>target: "footnotediv"</p>
+<p class="p1"><span class="Apple-converted-space">         </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">         </span>// play the video right away</p>
+<p class="p1"><span class="Apple-converted-space">         </span>pop.play();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>}, false);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
