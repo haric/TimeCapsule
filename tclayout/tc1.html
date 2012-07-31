@@ -43,7 +43,7 @@ Do the following if you're using your customized build of modernizr (http://www.
   
   <div id="tweets">
   <script language="JavaScript">
-	$.getJSON("https://twitter.com/statuses/user_timeline.json?screen_name=jimbweb&count=5&callback=?",//Replace name with twitter user name
+	$.getJSON("https://twitter.com/statuses/user_timeline.json?screen_name=mdotprime&count=5&callback=?",
  		function(data){
 			$.each(data, function(i,item){
 				ct = item.text;
@@ -55,12 +55,12 @@ Do the following if you're using your customized build of modernizr (http://www.
 				ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
 			    ct = ct.replace(/\s(@)(\w+)/g,    ' @<a href="http://twitter.com/$2" target="_blank">$2</a>');
 			    ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="http://search.twitter.com/search?q=%23$2" target="_blank">$2</a>');
-				$("#jim4web").append('<div>'+ct + " <small><i>(" + mydate + " @ " + mytime + ")</i></small></div>"); //Replace the twitter name at the start of this line.
+				$("#mdotprime").append('<div>'+ct + " <small><i>(" + mydate + " @ " + mytime + ")</i></small></div>");
  			});
 		});
 </script>	
 
-<div class="twitter" id="jim4web"></div><!--Replace twitter name to title id properly-->
+<div class="twitter" id="mdotprime"></div>
 </div>
 </body>
 </html>
