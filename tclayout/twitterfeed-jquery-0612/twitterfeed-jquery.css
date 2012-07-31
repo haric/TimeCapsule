@@ -1,0 +1,43 @@
+html,body {
+	background:url("bg.png") repeat-x scroll 0 0 #222222;
+	color:#cccccc;
+	font-family:Georgia, Times, serif;
+	font-size:11px;
+	line-height:16px;
+	margin:0;
+}
+	
+body {
+	width:100%;
+	text-align:center;
+}
+	
+#wrapper {
+	margin:auto;
+	width:986px;
+	padding:20px 0 0 0;
+}
+
+a, a:link, a:visited, a:hover {
+	text-decoration:underline;
+	color:#cacaca;
+}
+	
+#jstweets {
+	width:650px;
+	height:250px;
+	background:transparent url('tbird.png') top  left no-repeat;
+	border:1px solid #555555;
+	text-align:left;
+}
+h1 {
+	font-size:48px;
+	font-weight:normal;
+	font-family: Century Gothic,Myriad Pro,Arial,Helvetica,sans-serif;
+	margin: 0 0 40px 0;
+}
+.twitter {
+	display:table-cell; vertical-align:middle;
+	padding:0 0 0 250px;
+}
+	
