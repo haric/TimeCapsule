@@ -3,7 +3,7 @@ header('Content-type: application/json');
 
 ob_start();
 
-	$con = mysql_connect("localhost","test","test");
+	$con = mysql_connect("localhost","root","");
 			if (!$con)
 		{
 			die('Could not connect: ' . mysql_error());

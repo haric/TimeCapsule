@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>audioCodecInfo</key>
+	<string>mp4a.40.2</string>
+	<key>avgBitRate</key>
+	<real>197333.53663053585</real>
+	<key>maxBitRate</key>
+	<real>203641.60000000001</real>
+	<key>videoCodecInfo</key>
+	<string>avc1.42e00c</string>
+</dict>
+</plist>

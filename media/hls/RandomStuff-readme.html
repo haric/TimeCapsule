@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Compressor - Create HTTP Live Streaming Movie - RandomStuff.m3u8</title>
+	<td><h1>Instructions for posting <i>RandomStuff.m3u8</i> to your website</h1></td>
+<div id="summary">
+	<p>You have exported <i>RandomStuff.m3u8</i> using Compressor, Final Cut Pro or Motion.  The following information will help you post this movie to your website in the same folder as this instructional HTML file.</p>
+	<p>Also in that folder is an HTTP live streaming playlist (.m3u8), which selects the best version for your users' various devices and current connection speeds. By including this playlist in your HTML page, you can ensure a quality video experience on your site.</p>
+	<p>Compressor has placed the specified versions of your movie as indicated by your targets.</p>
+
+<div id="textembed">
+	<p>Use the following HTML code to embed your movie into your web page.</p>
+	<h3>Important Notes:</h3>
+	<ul>
+		<li>To make your media viewable on the Internet, your media assets (movies, poster image) must be placed on a publicly accessible server.</li>
+		<li>The URL parameters must be modified if your media assets are served from a different location than your web page.</li>
+		<li>The movie URL parameters must always point to the live streaming playlist.</li>
+		<li>Paths in playlist (.m3u8) should be relative to playlist and stream segments.</li>
+	</ul>
+	</p>
+
+<p>Example code for your web page:</p>
+<textarea rows="3" cols="80">
+	
+	&lt;video src="RandomStuff.m3u8" controls autoplay>&lt;/video&gt;
+</textarea>
+<p>Example code for a complete web page:</p>
+<textarea rows="20" cols="80">
+	
+	&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+	&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+	&lt;html&gt;
+	&lt;head&gt;
+	        &lt;title>HTTP Live Streaming Test&lt;/title&gt;
+	        &lt;meta name="viewport" content="width=0; height=0; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/&gt;
+	&lt;/head&gt;
+	&lt;body style="background-color:#FFFFFF;"&gt;
+	&lt;center&gt;
+	&lt;video src="RandomStuff.m3u8" controls autoplay>&lt;/video&gt;
+	&lt;/center&gt;
+	&lt;/body&gt;
+	&lt;/html&gt;
+
+</textarea>
+</body>
+</html>
