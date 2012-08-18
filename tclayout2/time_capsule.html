@@ -1,1 +1,95 @@
-<!DOCTYPE HTML><head><meta charset="UTF-8"><link rel="stylesheet" type="text/css" href="css/time_capsule_style.css" /><!-- desktop --><link rel="stylesheet" type="text/css" href="css/desktop.css" media="(min-width:481px)"/><!-- tablet --><link rel="stylesheet" type="text/css" href="css/tablet.css" media="(max-width:480px)"/><meta name="viewport" content="width=device-width",inital-scale=1.0/><title>Time Capsule</title></head><body><div id="container"><div class="main" id="video_main"><video></video><p>This is where we  stick the video element.</p></div><div class="main" id="notes">Notes Area:  <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</p><p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</p><p>&nbsp;</p><p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</p><p>&nbsp;</p><p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</p><p>&nbsp;</p><p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</p></div><div class="main" id="tweets">Tweets Area:  <p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Zoomy.</p><p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Conkers.</p><p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named&nbsp;Topper.</p><p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named&nbsp;Topper.</p><p>Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named&nbsp;Topper.</p></div></div></body></HTML>
+<!DOCTYPE HTML>
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" type="text/css" href="css/time_capsule_style.css" />
+<!-- desktop -->
+<link rel="stylesheet" type="text/css" href="css/desktop.css" media="(min-width:481px)"/>
+<!-- tablet -->
+<link rel="stylesheet" type="text/css" href="css/tablet.css" media="(max-width:480px)"/>
+
+<meta name="viewport" content="width=device-width",inital-scale=1.0/>
+
+<script language="JavaScript" type="text/javascript" src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script>
+<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+
+<title>Time Capsule</title>
+</head>
+<body>
+<div id="container">
+<div class="main" id="video_main">
+    <video id="tc-video" controls width="80%" height="100" class="video-js vjs-default-skin" preload="auto" >
+      <source src="../media/hls/RandomStuff.m3u8" />
+      <source src="../media/Chime.mp4" type="video/mp4" />
+    </video>
+</div>
+
+<div class="main" id="notes" style="min-height: 300px">
+</div>
+
+<div class="main" id="tweets">
+</div>
+  <script language="JavaScript">
+	$.getJSON("https://twitter.com/statuses/user_timeline.json?screen_name=mdotprime&count=5&callback=?",
+ 		function(data){
+			$.each(data, function(i,item){
+				ct = item.text;
+				mytime = item.created_at;
+				var strtime = mytime.replace(/(\+\S+) (.*)/, '$2 $1')
+				var mydate = new Date(Date.parse(strtime)).toLocaleDateString();
+				var mytime = new Date(Date.parse(strtime)).toLocaleTimeString();		
+
+				ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
+			    ct = ct.replace(/\s(@)(\w+)/g,    ' @<a href="http://twitter.com/$2" target="_blank">$2</a>');
+			    ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="http://search.twitter.com/search?q=%23$2" target="_blank">$2</a>');
+				$("#tweets").append('<div>'+ct + " <small><i>(" + mydate + " @ " + mytime + ")</i></small></div>");
+ 			});
+		});
+</script>	
+
+</div>
+</body>
+     <script>
+      // ensure the web page (DOM) has loaded
+      $( function () {
+		  
+		  // annotations show now be created from the getmessage api
+		  var annotations = ["Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing."
+		  
+		  ];
+		  
+		  $.getJSON("../php/getMessage.php",
+ 		function(data){
+			$.each(data, function(k,item){
+				if (k == "Message")
+					annotations.push(item);
+ 			});
+         // add a footnote at 2 seconds, and remove it at 6 seconds
+		 var _start = 0, _end = 5, _delay = 5;
+
+		 for (var i = 0; i < annotations.length; i++) {
+			 pop.footnote({
+			   start: _start,
+			   end: _end,
+			   text: annotations[i],
+			   target: "notes"
+			 });
+			 
+			 _start = _end + _delay;
+			 _end = _start + 5;
+		 }
+
+
+		});
+
+         // Create a popcorn instance by calling Popcorn("#id-of-my-video")
+         var pop = Popcorn("#tc-video");
+  
+
+         // play the video right away
+         pop.play();
+
+      }, false);
+    </script>
+
+</HTML>
