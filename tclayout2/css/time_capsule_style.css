@@ -1,5 +1,6 @@
 @import url("../webfonts/droid_regular_macroman/stylesheet.css");
 @import url("../webfonts/panefresco-fontfacekit/stylesheet.css");
+@import url("../webfonts/corehumanistsans_regular_macroman/stylesheet.css");
 .main {
 	-webkit-border-radius: 0em 1em 0em 1em;
 	-khtml-border-radius: 0em 1em 0em 1em;
@@ -23,13 +24,14 @@
 }
 #headline {
 	background-color: #3C3;
-	font-family: "Panefresco1wtRegular";
+	font-family: CoreHumanistSansRegular;
 	color: #FFF;
 	margin-bottom: 15px;
 	text-align: center;
 	font-size: 24px;
 	font-weight: 100;
 	font-variant: normal;
+	width: 100%;
 }
 #video_main{
 	background-color: #D6D6D6;
