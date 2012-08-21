@@ -59,15 +59,15 @@
       $( function () {
 		  
 		  // annotations show now be created from the getmessage api
-		  var annotations = ["Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing."
+		  var annotations = [{Message: "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing."
 		  
-		  ];
+		  }];
 		  
 		  $.getJSON("../php/getMessage.php",
  		function(data){
 			$.each(data, function(k,item){
-				if (k == "Message")
-					annotations.push(item);
+				annotations.push(item);
+					
  			});
          // add a footnote at 2 seconds, and remove it at 6 seconds
 		 var _start = 0, _end = 5, _delay = 5;
@@ -76,7 +76,7 @@
 			 pop.footnote({
 			   start: _start,
 			   end: _end,
-			   text: annotations[i],
+			   text: annotations[i].Message,
 			   target: "notes"
 			 });
 			 

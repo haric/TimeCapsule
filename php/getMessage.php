@@ -13,10 +13,12 @@ ob_start();
 			{
 				$my_query = "select * from messages";
 				$result = mysql_query($my_query);
+				$rows = array();
+				while($r = mysql_fetch_assoc($result)) {
+					$rows[] = $r;
+				}			
 				
-				$row = mysql_fetch_array($result,MYSQL_ASSOC);				
-				
-				echo json_encode($row);
+				echo json_encode($rows);
 	}
 	
 	ob_flush()
