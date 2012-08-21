@@ -17,6 +17,11 @@
 </head>
 <body>
 <div id="container">
+<header>
+<div class="main" id="headline">
+<h3>Time Capsule Training Portal</h3>
+</div>
+</header>
 <div class="main" id="video_main">
     <video id="tc-video" controls width="80%" height="100" class="video-js vjs-default-skin" preload="auto" >
       <source src="../media/hls/RandomStuff.m3u8" />
@@ -42,7 +47,7 @@
 				ct = ct.replace(/http:\/\/\S+/g,  '<a href="$&" target="_blank">$&</a>');
 			    ct = ct.replace(/\s(@)(\w+)/g,    ' @<a href="http://twitter.com/$2" target="_blank">$2</a>');
 			    ct = ct.replace(/\s(#)(\w+)/g,    ' #<a href="http://search.twitter.com/search?q=%23$2" target="_blank">$2</a>');
-				$("#tweets").append('<div>'+ct + " <small><i>(" + mydate + " @ " + mytime + ")</i></small></div>");
+				$("#tweets").append('<div>'+ct + " <small><i>(" + mydate + " @ " + mytime + ")</i></small></div></br>");
  			});
 		});
 </script>	
