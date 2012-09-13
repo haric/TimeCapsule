@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'RopaSansRegular';
+	src: url('RopaSans-Regular-webfont.eot');
+	src: url('RopaSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('RopaSans-Regular-webfont.woff') format('woff'),
+		url('RopaSans-Regular-webfont.ttf') format('truetype'),
+		url('RopaSans-Regular-webfont.svg') format('svg');
+}
