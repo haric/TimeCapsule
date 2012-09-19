@@ -1,13 +1,8 @@
 @charset "UTF-8";
-@import url("../_fonts/RopaSansRegular/stylesheet.css");
 /*time_capsule_style.css*/
+@import url("../_fonts/RopaSansRegular/stylesheet.css");
 
-body {
-	background-color: #003366;
-	background-image: url(images/clokbkg.png);
-	background-repeat: no-repeat;
-	font-size: 100%;
-}
+
 .main {
 	margin: 1px;
 	padding: 1px;
