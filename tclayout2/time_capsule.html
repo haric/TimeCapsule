@@ -1,14 +1,13 @@
 <!DOCTYPE HTML>
+<html>
 <head>
 <meta charset="UTF-8">
 
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 
-<!--<link href="css/ipadlandscape.css" rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) ">-->
-
 <link rel="stylesheet" type="text/css" href="css/time_capsule_style.css" />
 
-<meta name="viewport" content="width=device-width",inital-scale=1.0/>
+<link href="css/ipadlandscape.css" rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) "><meta name="viewport" content="width=device-width",inital-scale=1.0/>
 
 <script language="JavaScript" type="text/javascript" src="http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"></script>
 <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
@@ -18,7 +17,8 @@ body {
 	background-image: url(images/clokbkg.png);
 	background-repeat: no-repeat;
 	font-size: 100%;
-}</style>
+}
+</style>
 <title>Time Capsule</title>
 </head>
 <body>
@@ -29,7 +29,7 @@ body {
 </header>
 <div id="section">
 <div class="main" id="video_main">
-    <video id="tc-video" controls width="300px" height="300" class="video-js vjs-default-skin" preload="auto" >
+    <video id="tc-video" controls width="300px"  class="video-js vjs-default-skin" preload="auto" >
       <source src="../media/hls/RandomStuff.m3u8" />
       <source src="../media/Chime.mp4" type="video/mp4" />
       <source src="../media/Chime.webm" type="video/webm" />
@@ -73,7 +73,7 @@ body {
 		  
 		  ];
 		  
-		  $("#tc-video").width($("#video_main").width());
+		  //$("#tc-video").width($("#video_main").width());
 		  $.getJSON("../php/getMessage.php",
  		function(data){
 			$.each(data, function(k,item){
@@ -108,4 +108,4 @@ body {
       }, false);
     </script>
 </body>
-</HTML>
+</html>

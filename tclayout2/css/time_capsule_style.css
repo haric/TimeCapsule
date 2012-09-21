@@ -2,7 +2,6 @@
 /*time_capsule_style.css*/
 @import url("../_fonts/RopaSansRegular/stylesheet.css");
 
-
 .main {
 	margin: 1px;
 	padding: 1px;
@@ -13,7 +12,7 @@
 	max-width: 960px;
 	min-width: 0px;
 	margin-right: auto;
-	margin-left: auto;/
+	margin-left: auto;
 	font-size: 16px;
 	border-bottom-width: thin;
 	border-bottom-style: solid;
@@ -28,7 +27,7 @@
 #section{
 	width: 95%;
 	margin-right: auto;
-	margin-left: auto;/
+	margin-left: auto;
 	clear: left;
 	max-width: 960px;
 	min-width: 0px;
@@ -43,6 +42,7 @@
 	border-bottom-width: thin;
 	border-bottom-style: solid;
 	border-bottom-color: #FFF;
+	text-align: center;	
 }
 
 #notes{

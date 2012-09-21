@@ -1,3 +1,17 @@
 @charset "UTF-8";
 /* ipadlandscape.css */
 
+
+#video_main{
+	width: 47%;
+	float: left;
+	font-size: .5em;
+	margin-bottom: 5px;
+}
+#tweets{
+	padding-top: 2px;
+	font-size: 10px;
+}
+#headline {
+	height: 18px;
+}
