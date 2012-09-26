@@ -77,7 +77,7 @@ body {
 		  $.getJSON("../php/getMessage.php",
  		function(data){
 			$.each(data, function(k,item){
-				if (k == "Message")
+				/*if (k == "Message")*/
 					annotations.push(item);
  			});
          // add a footnote at 2 seconds, and remove it at 6 seconds
