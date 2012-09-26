@@ -34,8 +34,7 @@ body {
       <source src="../media/Chime.mp4" type="video/mp4" />
       <source src="../media/Chime.webm" type="video/webm" />
     </video>
-</div>
-
+</div> 
 
 <div class="main" id="notes">
 </div>
@@ -60,7 +59,6 @@ body {
 		});
 </script>	
 
-
 </div>
 </div>
 
@@ -69,7 +67,7 @@ body {
       $( function () {
 		  
 		  // annotations show now be created from the getmessage api
-		  var annotations = ["Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing."
+		  var annotations = [{Message: "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing."}
 		  
 		  ];
 		  
@@ -77,7 +75,7 @@ body {
 		  $.getJSON("../php/getMessage.php",
  		function(data){
 			$.each(data, function(k,item){
-				/*if (k == "Message")*/
+				//if (k == "Message")
 					annotations.push(item);
  			});
          // add a footnote at 2 seconds, and remove it at 6 seconds
@@ -87,7 +85,7 @@ body {
 			 pop.footnote({
 			   start: _start,
 			   end: _end,
-			   text: annotations[i],
+			   text: annotations[i].Message,
 			   target: "notes"
 			 });
 			 
